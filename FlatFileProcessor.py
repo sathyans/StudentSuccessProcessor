@@ -136,8 +136,11 @@ def getFile(choice):
             sessionStr = ""        
     if (choice=="O"):
         outfile = fullName(choice) + year + term +  "06.txt"
-    else:  
-        outfile = "sss06_" + fullName(choice) + sessionStr + "_" + str(year) + str(term) + ".txt"
+    else:
+        if (choice=="J"):
+            outfile = "sss06_" + fullName(choice) + "_" + str(year) + str(term) + ".txt"
+        else:    
+            outfile = "sss06_" + fullName(choice) + sessionStr + "_" + str(year) + str(term) + ".txt"
     docout = open(outfile,"w")
     hasHeader = input("Does this file have the column names on the first line? Y/N \n")
     if (hasHeader == 'Y' or hasHeader == 'y'):
