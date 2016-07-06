@@ -151,6 +151,8 @@ def getFile(choice):
         print("Invalid choice\n")
     for line in docin:
         newline = ""
+        #strip double quotes from file - SS - 20160705
+        line = line.replace('\"','')
         field = re.split("\t",line)        
         if (linecount > 0):
             if (row > 0):
